@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_azul">#49A8D6</color>
+    <color name="backgroud_actionbar">#24779F</color>
+    
+    <color name="preto">#000000</color>
+    <color name="branco">#FFFFFF</color>
+    <color name="cinza_claro">#EEEEEE</color>
+</resources>

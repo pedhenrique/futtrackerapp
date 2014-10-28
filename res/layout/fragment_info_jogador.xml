@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imagemJogador"
+        android:layout_gravity="center"
+        android:layout_width="150sp"
+        android:layout_height="180sp"
+        android:layout_marginTop="30sp"
+        android:layout_marginRight="20sp"
+        android:layout_marginLeft="20sp" />
+    
+   <TableLayout 
+   		android:layout_width="fill_parent" android:layout_height="wrap_content" 
+   		android:layout_marginTop="20sp" android:layout_marginBottom="10sp"
+   		android:layout_marginLeft="2sp" android:layout_marginRight="2sp"
+   		android:background="@color/backgroud_actionbar"
+   		android:stretchColumns="1"
+       >
+       
+       <TableRow 
+           android:layout_width="match_parent" android:layout_height="wrap_content"
+           >
+            <TextView 
+        		android:layout_width="wrap_content" android:layout_height="wrap_content"
+        		android:layout_margin ="5sp" 
+        		android:textStyle="bold"
+        		android:text="Nome"
+        	/>
+            
+             <TextView 
+       
+                android:layout_width="match_parent" android:layout_height="match_parent"
+       		 	android:id="@+id/fragment_jogador_nome"
+        		android:layout_marginRight="15sp" 
+        		android:layout_gravity="right"
+       		 />
+       </TableRow>
+       
+       <TableRow 
+           android:layout_width="match_parent" android:layout_height="wrap_content"
+           >
+            <TextView 
+        		android:layout_width="wrap_content" android:layout_height="wrap_content"
+        		android:layout_margin ="5sp" 
+        		android:textStyle="bold"
+        		android:text="Posição"
+        	/>
+            
+             <TextView 
+  
+       		 	android:id="@+id/fragment_jogador_posicao"
+       			android:layout_width="match_parent" android:layout_height="match_parent"
+        		android:layout_marginRight="15sp" 
+        		android:layout_gravity="right"
+       		 />
+       </TableRow>
+       <TableRow 
+           android:layout_width="match_parent" android:layout_height="wrap_content"
+           >
+            <TextView 
+        		android:layout_width="wrap_content" android:layout_height="wrap_content"
+        		android:layout_margin ="5sp" 
+        		android:textStyle="bold"
+        		android:text="Número"
+        	/>
+            
+             <TextView 
+
+       		 	android:id="@+id/fragment_jogador_numero"
+       			android:layout_width="match_parent" android:layout_height="match_parent"
+        		android:layout_marginRight="15sp" 
+        		android:layout_gravity="right"
+       		 />
+       </TableRow>
+       <TableRow 
+           android:layout_width="match_parent" android:layout_height="wrap_content"
+           >
+            <TextView 
+        		android:layout_width="wrap_content" android:layout_height="wrap_content"
+        		android:layout_margin ="5sp" 
+        		android:textStyle="bold"
+        		android:text="Vel. máxima"
+        	/>
+            
+             <TextView 
+
+       		 	android:id="@+id/fragment_jogador_vel_max"
+       			android:layout_width="match_parent" android:layout_height="match_parent"
+        		android:layout_marginRight="15sp" 
+        		android:layout_gravity="right"
+       		 />
+       </TableRow>
+       <TableRow 
+           android:layout_width="match_parent" android:layout_height="wrap_content"
+           >
+            <TextView 
+        		android:layout_width="wrap_content" android:layout_height="wrap_content"
+        		android:layout_margin ="5sp"
+        		android:textStyle="bold"
+        		android:text="Vel. média"
+        		
+        	/>
+            
+             <TextView 
+
+       		 	android:id="@+id/fragment_jogador_vel_media"
+       			android:layout_width="match_parent" android:layout_height="match_parent"
+        		android:layout_marginRight="15sp" 
+        		android:layout_gravity="right"
+       		 />
+       </TableRow>
+       <TableRow 
+           android:layout_width="match_parent" android:layout_height="wrap_content"
+
+           >
+            <TextView 
+        		android:layout_width="wrap_content" android:layout_height="wrap_content"
+        		android:layout_margin ="5sp" 
+        		android:textStyle="bold"
+        		android:text="Distância"
+        	/>
+            
+             <TextView 
+
+       		 	android:id="@+id/fragment_jogador_distancia_percorrida"
+       			android:layout_width="match_parent" android:layout_height="match_parent"
+        		android:layout_marginRight="15sp"
+        		android:layout_gravity="right" 
+        		
+       		 />
+       </TableRow>
+       
+       
+   </TableLayout>
+
+</LinearLayout>
