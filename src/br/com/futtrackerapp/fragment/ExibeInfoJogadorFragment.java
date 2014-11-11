@@ -1,16 +1,20 @@
 package br.com.futtrackerapp.fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import br.com.futtrackerapp.MainActivity;
 import br.com.futtrackerapp.R;
 import br.com.futtrackerapp.activity.ExibeInfoJogador;
+import br.com.futtrackerapp.activity.TelaInicial;
 import br.com.futtrackerapp.entidades.Jogador;
 import br.com.futtrackerapp.webservice.JogadorREST;
 
@@ -25,6 +29,22 @@ public class ExibeInfoJogadorFragment extends Fragment {
 	private static TextView txtViewVelMedia;
 	private static TextView txtViewDistancia;
 
+	private Thread t1 = new Thread() {
+
+		@Override
+		public void run() {
+			super.run();
+			while(true){
+				try {
+					atualizaDadosJogador();
+					sleep(10000);
+					Log.i("Thread","Chamei");
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	};
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -51,7 +71,33 @@ public class ExibeInfoJogadorFragment extends Fragment {
 				.findViewById(R.id.fragment_jogador_distancia_percorrida);
 
 		img.setImageResource(R.drawable.atletasemfoto2);
-		
+
+		atualizaDadosJogador();
+
+		//t1.start();
+
+		return view;
+	}
+
+	
+	
+	@Override
+	public void onResume() {
+		super.onResume();
+		t1.start();
+	}
+
+
+
+//	@Override
+//	public void onPause() {
+//		super.onPause();
+//		t1.stop();
+//	}
+
+
+
+	private void atualizaDadosJogador() {
 		new AsyncTask<Integer, Void, Jogador>() {
 
 			@Override
@@ -68,25 +114,26 @@ public class ExibeInfoJogadorFragment extends Fragment {
 			@Override
 			protected void onPostExecute(Jogador jogador) {
 				super.onPostExecute(jogador);
-				if(jogador == null){
-					Toast.makeText(getActivity(), "Erro de rede!", Toast.LENGTH_LONG).show();
-				}
-				else{
-					ExibeInfoJogador.actionBar.setTitle(String.valueOf(jogador.getApelido()));
-					
+				if (jogador == null) {
+					Toast.makeText(getActivity(), "Erro de rede!",
+							Toast.LENGTH_LONG).show();
+				} else {
+					ExibeInfoJogador.actionBar.setTitle(String.valueOf(jogador
+							.getApelido()));
+
 					txtViewNome.setText(String.valueOf(jogador.getNome()));
 					txtViewNumero.setText(String.valueOf(jogador.getNumero()));
-					txtViewPosicao.setText(String.valueOf(jogador.getPosicao()));
-					txtViewVelMax.setText(String.valueOf(jogador.getVelocidadeMaxima()));
-					txtViewVelMedia.setText(String.valueOf(jogador.getVelocidadeMedia()));
-					txtViewDistancia.setText(String.valueOf(jogador.getDistanciaPercorrida()));
+					txtViewPosicao
+							.setText(String.valueOf(jogador.getPosicao()));
+					txtViewVelMax.setText(String.valueOf(jogador
+							.getVelocidadeMaxima()));
+					txtViewVelMedia.setText(String.valueOf(jogador
+							.getVelocidadeMedia()));
+					txtViewDistancia.setText(String.valueOf(jogador
+							.getDistanciaPercorrida()));
 				}
 			}
-			
-			
-			
-			
+
 		}.execute(idJogador);
-		return view;
 	}
 }
