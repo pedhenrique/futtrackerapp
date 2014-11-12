@@ -1,8 +1,5 @@
 package br.com.futtrackerapp.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -11,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -37,7 +33,7 @@ public class TelaInicial extends ListActivity{
 		case 0:
 			startActivity(new Intent(this, ExibeListaTimes.class));break;
 		case 1:
-			startActivity(new Intent(this, ExibeVideo.class));break;
+			startActivity(new Intent(this, ExibeListaVideos.class));break;
 		case 2:
 			finish();
 		default:

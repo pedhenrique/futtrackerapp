@@ -6,6 +6,17 @@ public class Comando {
 	
 	private boolean comando;
 
+	private Integer idVideo;
+	
+	
+	public Integer getIdVideo() {
+		return idVideo;
+	}
+
+	public void setIdVideo(Integer idVideo) {
+		this.idVideo = idVideo;
+	}
+
 	public Integer getId() {
 		return id;
 	}

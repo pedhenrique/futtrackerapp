@@ -1,7 +1,6 @@
 package br.com.futtrackerapp.fragment;
 
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,10 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import br.com.futtrackerapp.MainActivity;
 import br.com.futtrackerapp.R;
 import br.com.futtrackerapp.activity.ExibeInfoJogador;
-import br.com.futtrackerapp.activity.TelaInicial;
 import br.com.futtrackerapp.entidades.Jogador;
 import br.com.futtrackerapp.webservice.JogadorREST;
 

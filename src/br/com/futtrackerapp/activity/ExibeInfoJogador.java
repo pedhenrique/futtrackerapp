@@ -5,18 +5,15 @@ import android.app.ActionBar.Tab;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 import br.com.futtrackerapp.R;
-import br.com.futtrackerapp.entidades.Jogador;
 import br.com.futtrackerapp.fragment.ExibeGraficoJogadorFragment;
 import br.com.futtrackerapp.fragment.ExibeInfoJogadorFragment;
 import br.com.futtrackerapp.util.TabListener;
 import br.com.futtrackerapp.webservice.ComandoREST;
-import br.com.futtrackerapp.webservice.JogadorREST;
 
 /**
  * @author LuísCláudio

@@ -28,6 +28,7 @@
         <activity android:name=".activity.ExibeInfoJogador"></activity>
         <activity android:name=".activity.ExibeVideo"></activity>
         <activity android:name=".activity.TelaInicial"></activity>
+        <activity android:name=".activity.ExibeListaVideos"></activity>
     </application>
 
 </manifest>

@@ -39,37 +39,39 @@ public final class R {
         public static final int quadra_futsal=0x7f020007;
     }
     public static final class id {
-        public static final int action_gravar_jogada=0x7f090012;
+        public static final int action_gravar_jogada=0x7f090013;
         public static final int exibe_info_jogador_fragment=0x7f090002;
         public static final int exibe_lista_jogadores_lista=0x7f090003;
         public static final int exibe_lista_times_lista=0x7f090004;
-        public static final int fragment_jogador_distancia_percorrida=0x7f09000d;
-        public static final int fragment_jogador_imagem_grafico=0x7f090006;
-        public static final int fragment_jogador_nome=0x7f090008;
-        public static final int fragment_jogador_numero=0x7f09000a;
-        public static final int fragment_jogador_posicao=0x7f090009;
-        public static final int fragment_jogador_vel_max=0x7f09000b;
-        public static final int fragment_jogador_vel_media=0x7f09000c;
-        public static final int imagemJogador=0x7f090007;
-        public static final int imageview=0x7f09000e;
+        public static final int exibe_lista_videos_lista=0x7f090005;
+        public static final int fragment_jogador_distancia_percorrida=0x7f09000e;
+        public static final int fragment_jogador_imagem_grafico=0x7f090007;
+        public static final int fragment_jogador_nome=0x7f090009;
+        public static final int fragment_jogador_numero=0x7f09000b;
+        public static final int fragment_jogador_posicao=0x7f09000a;
+        public static final int fragment_jogador_vel_max=0x7f09000c;
+        public static final int fragment_jogador_vel_media=0x7f09000d;
+        public static final int imagemJogador=0x7f090008;
+        public static final int imageview=0x7f09000f;
         public static final int main_imagem=0x7f090000;
         public static final int main_texto=0x7f090001;
-        public static final int myVideo=0x7f090005;
-        public static final int pager=0x7f090010;
-        public static final int tela_inicial_lista=0x7f090011;
-        public static final int text=0x7f09000f;
+        public static final int myVideo=0x7f090006;
+        public static final int pager=0x7f090011;
+        public static final int tela_inicial_lista=0x7f090012;
+        public static final int text=0x7f090010;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int exibe_info_jogador=0x7f030001;
         public static final int exibe_lista_jogadores=0x7f030002;
         public static final int exibe_lista_times=0x7f030003;
-        public static final int exibe_video=0x7f030004;
-        public static final int fragment_exibe_grafico_jogador=0x7f030005;
-        public static final int fragment_info_jogador=0x7f030006;
-        public static final int item_list_view=0x7f030007;
-        public static final int layout_tab_jogador=0x7f030008;
-        public static final int tela_inicial=0x7f030009;
+        public static final int exibe_lista_videos=0x7f030004;
+        public static final int exibe_video=0x7f030005;
+        public static final int fragment_exibe_grafico_jogador=0x7f030006;
+        public static final int fragment_info_jogador=0x7f030007;
+        public static final int item_list_view=0x7f030008;
+        public static final int layout_tab_jogador=0x7f030009;
+        public static final int tela_inicial=0x7f03000a;
     }
     public static final class menu {
         public static final int main=0x7f080000;

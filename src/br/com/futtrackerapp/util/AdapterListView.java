@@ -12,6 +12,7 @@ import android.widget.TextView;
 import br.com.futtrackerapp.R;
 import br.com.futtrackerapp.entidades.Jogador;
 import br.com.futtrackerapp.entidades.Time;
+import br.com.futtrackerapp.entidades.Video;
 
 public class AdapterListView<T> extends BaseAdapter{
 	private LayoutInflater mInflater;
@@ -69,6 +70,12 @@ public class AdapterListView<T> extends BaseAdapter{
 				itemHolder.txtTitle.setText(((Time) item).getNome());
 				itemHolder.imgIcon.setImageResource(R.drawable.logo_minas_grande);
 				
+			}
+			else{
+				if(item instanceof Video){
+					itemHolder.txtTitle.setText(((Video) item).getPath());
+					itemHolder.imgIcon.setImageResource(R.drawable.logo_minas_grande);					
+				}				
 			}
 			
 		}
