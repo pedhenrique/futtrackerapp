@@ -73,7 +73,7 @@ public class AdapterListView<T> extends BaseAdapter{
 			}
 			else{
 				if(item instanceof Video){
-					itemHolder.txtTitle.setText(((Video) item).getPath());
+					itemHolder.txtTitle.setText(((Video) item).getNome() + ".mp4");
 					itemHolder.imgIcon.setImageResource(R.drawable.logo_minas_grande);					
 				}				
 			}

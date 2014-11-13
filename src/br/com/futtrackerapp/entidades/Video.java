@@ -6,7 +6,14 @@ public class Video {
 	
 	private String path;
 	private boolean pronto;
+	private String nome;
 	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 	public Integer getId() {
 		return id;
 	}
