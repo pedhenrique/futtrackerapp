@@ -17,11 +17,15 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import br.com.futtrackerapp.R;
+import br.com.futtrackerapp.entidades.Comando;
 import br.com.futtrackerapp.entidades.Jogador;
 import br.com.futtrackerapp.entidades.Time;
+import br.com.futtrackerapp.entidades.Video;
 import br.com.futtrackerapp.util.AdapterListView;
+import br.com.futtrackerapp.util.Notificacao;
 import br.com.futtrackerapp.webservice.ComandoREST;
 import br.com.futtrackerapp.webservice.TimeREST;
+import br.com.futtrackerapp.webservice.VideoREST;
 
 public class ExibeListaJogadores extends Activity implements OnItemClickListener{
 	private ListView listView;
@@ -106,23 +110,41 @@ public class ExibeListaJogadores extends Activity implements OnItemClickListener
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.action_gravar_jogada:
-			
+
 			final ComandoREST cdao = new ComandoREST();
-			new AsyncTask<Void, Void, Void>(){
+			new AsyncTask<Void, Void, Video>() {
 
 				@Override
-				protected Void doInBackground(Void... params) {
+				protected Video doInBackground(Void... params) {
+					Video v = null;
 					try {
-						cdao.solicitaVideo();
+						Comando c = cdao.solicitaVideo();
+						boolean pronto = false;
+						do{
+							v = VideoREST.getVideo(c.getIdVideo());
+							if(v.isPronto2()){
+								pronto = true;
+							}
+						}while(!pronto);											
 					} catch (Exception e) {
-						
+
 						e.printStackTrace();
 					}
-					return null;
+					return v;
 				}
 
+				@Override
+				protected void onPostExecute(Video result) {
+					super.onPostExecute(result);
+					
+					Notificacao.geraNotificacao(getApplicationContext(), result);
+				}
+				
 			}.execute();
-			Toast.makeText(this, "Vídeo solicitado com sucesso. Por favor, aguarde seu processamento.", Toast.LENGTH_LONG).show();
+			Toast.makeText(
+					this,
+					"Vídeo solicitado com sucesso. Por favor, aguarde seu processamento.",
+					Toast.LENGTH_LONG).show();
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);

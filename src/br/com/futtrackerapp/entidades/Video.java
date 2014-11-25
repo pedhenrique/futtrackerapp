@@ -6,8 +6,15 @@ public class Video {
 	
 	private String path;
 	private boolean pronto;
+	private boolean pronto2;
 	private String nome;
 	
+	public boolean isPronto2() {
+		return pronto2;
+	}
+	public void setPronto2(boolean pronto2) {
+		this.pronto2 = pronto2;
+	}
 	public String getNome() {
 		return nome;
 	}

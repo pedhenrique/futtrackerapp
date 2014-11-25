@@ -37,6 +37,7 @@ public final class R {
         public static final int logo_nova2=0x7f020005;
         public static final int modelo_brasao_peq=0x7f020006;
         public static final int quadra_futsal=0x7f020007;
+        public static final int teste=0x7f020008;
     }
     public static final class id {
         public static final int action_gravar_jogada=0x7f090013;

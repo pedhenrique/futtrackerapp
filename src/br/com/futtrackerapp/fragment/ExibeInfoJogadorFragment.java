@@ -26,22 +26,24 @@ public class ExibeInfoJogadorFragment extends Fragment {
 	private static TextView txtViewVelMedia;
 	private static TextView txtViewDistancia;
 
-	private Thread t1 = new Thread() {
-
+	Thread t1 = new Thread() {
 		@Override
 		public void run() {
 			super.run();
-			while(true){
+			while (true) {
 				try {
 					atualizaDadosJogador();
-					sleep(10000);
-					Log.i("Thread","Chamei");
+					sleep(1 * 1000);
+					Log.i("T", "Rodou...");
+
 				} catch (InterruptedException e) {
 					e.printStackTrace();
+					return; // Não fazer nada enquanto está intenrrompida
 				}
 			}
 		}
 	};
+		
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -68,35 +70,23 @@ public class ExibeInfoJogadorFragment extends Fragment {
 				.findViewById(R.id.fragment_jogador_distancia_percorrida);
 
 		img.setImageResource(R.drawable.atletasemfoto2);
-
+		
 		atualizaDadosJogador();
-
-		//t1.start();
-
+		
 		return view;
 	}
 
-	
-	
 	@Override
-	public void onResume() {
-		super.onResume();
-		t1.start();
+	public void onPause() {
+		super.onPause();
+		//t1.interrupt();
+//		Log.i("T", "Intemrrompeu...");
 	}
 
-
-
-//	@Override
-//	public void onPause() {
-//		super.onPause();
-//		t1.stop();
-//	}
-
-
-
 	private void atualizaDadosJogador() {
+		
 		new AsyncTask<Integer, Void, Jogador>() {
-
+			
 			@Override
 			protected Jogador doInBackground(Integer... params) {
 				Jogador jogador = null;
@@ -130,7 +120,6 @@ public class ExibeInfoJogadorFragment extends Fragment {
 							.getDistanciaPercorrida()));
 				}
 			}
-
 		}.execute(idJogador);
 	}
 }
