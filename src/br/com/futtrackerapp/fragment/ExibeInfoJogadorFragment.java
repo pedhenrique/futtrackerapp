@@ -17,7 +17,7 @@ import br.com.futtrackerapp.webservice.JogadorREST;
 
 public class ExibeInfoJogadorFragment extends Fragment {
 	private static int idJogador;
-
+	
 	private ImageView img;
 	private static TextView txtViewNome;
 	private static TextView txtViewPosicao;
@@ -25,16 +25,20 @@ public class ExibeInfoJogadorFragment extends Fragment {
 	private static TextView txtViewVelMax;
 	private static TextView txtViewVelMedia;
 	private static TextView txtViewDistancia;
-
-	Thread t1 = new Thread() {
+	private static T t1;
+	
+	private class T extends Thread{
+		boolean Running = false;
+		
 		@Override
 		public void run() {
 			super.run();
-			while (true) {
+			
+			while (Running) {
 				try {
 					atualizaDadosJogador();
 					sleep(1 * 1000);
-					Log.i("T", "Rodou...");
+					Log.i("T", "Thread rodando...");
 
 				} catch (InterruptedException e) {
 					e.printStackTrace();
@@ -70,17 +74,27 @@ public class ExibeInfoJogadorFragment extends Fragment {
 				.findViewById(R.id.fragment_jogador_distancia_percorrida);
 
 		img.setImageResource(R.drawable.atletasemfoto2);
-		
-		atualizaDadosJogador();
+		t1 = new T();
+		//atualizaDadosJogador();
 		
 		return view;
 	}
-
+	
 	@Override
-	public void onPause() {
-		super.onPause();
-		//t1.interrupt();
-//		Log.i("T", "Intemrrompeu...");
+	public void onResume() {
+		super.onResume();
+		
+		if(!t1.Running){
+			t1.start();
+			t1.Running = true;
+		}
+	}
+	
+	@Override
+	public void onStop() {
+		super.onStop();
+		
+		t1.Running = false;
 	}
 
 	private void atualizaDadosJogador() {

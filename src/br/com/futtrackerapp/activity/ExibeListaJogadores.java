@@ -96,10 +96,7 @@ public class ExibeListaJogadores extends Activity implements OnItemClickListener
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		/*
-		 * getMenuInflater().inflate(R.menu.main, menu); return true;
-		 */
+		
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
 		return super.onCreateOptionsMenu(menu);
@@ -150,8 +147,4 @@ public class ExibeListaJogadores extends Activity implements OnItemClickListener
 			return super.onOptionsItemSelected(item);
 		}
 	}
-
-	
-	
-	
 }

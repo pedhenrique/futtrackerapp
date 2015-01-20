@@ -20,20 +20,13 @@ import br.com.futtrackerapp.webservice.ComandoREST;
 import br.com.futtrackerapp.webservice.VideoREST;
 
 public class ExibeInfoJogador extends FragmentActivity{
-	private int id_time;
-	private int id_jogador;
 	public static ActionBar actionBar;
-	
+		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.exibe_info_jogador);
-		
-		int[] atribs = getIntent().getIntArrayExtra("dados_jogador");
-
-		id_time = atribs[0];
-		id_jogador = atribs[1];
 		
 		actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -68,7 +61,6 @@ public class ExibeInfoJogador extends FragmentActivity{
 		return super.onCreateOptionsMenu(menu);
 
 	}
-
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
