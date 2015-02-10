@@ -27,14 +27,17 @@ public class ExibeInfoJogadorFragment extends Fragment {
 	private static TextView txtViewDistancia;
 	private static T t1;
 	
+	/* Controle da Thread */
+	boolean running = false;
+	Object runningLock = new Object();
+	boolean alive = true;
 	private class T extends Thread{
-		boolean Running = false;
 		
 		@Override
 		public void run() {
 			super.run();
 			
-			while (Running) {
+			while (alive) {
 				try {
 					atualizaDadosJogador();
 					sleep(1 * 1000);
@@ -42,9 +45,21 @@ public class ExibeInfoJogadorFragment extends Fragment {
 
 				} catch (InterruptedException e) {
 					e.printStackTrace();
-					return; // N„o fazer nada enquanto est· intenrrompida
+					return; // N√£o fazer nada enquanto est√° intenrrompida
 				}
+				
+				synchronized (runningLock) {
+	                while (!running) {
+	                    try {
+	                        runningLock.wait();
+	                    } catch (InterruptedException e) {
+	                    	e.printStackTrace();
+	    					return;
+	                    }
+	                }
+	            }
 			}
+			
 		}
 	};
 		
@@ -75,7 +90,7 @@ public class ExibeInfoJogadorFragment extends Fragment {
 
 		img.setImageResource(R.drawable.atletasemfoto2);
 		t1 = new T();
-		//atualizaDadosJogador();
+		t1.start();
 		
 		return view;
 	}
@@ -84,17 +99,18 @@ public class ExibeInfoJogadorFragment extends Fragment {
 	public void onResume() {
 		super.onResume();
 		
-		if(!t1.Running){
-			t1.start();
-			t1.Running = true;
-		}
+		synchronized (runningLock) {
+            running = true;
+            runningLock.notifyAll();
+        }
 	}
 	
 	@Override
 	public void onStop() {
 		super.onStop();
-		
-		t1.Running = false;
+		synchronized (runningLock) {
+            running = false;
+        }
 	}
 
 	private void atualizaDadosJogador() {
