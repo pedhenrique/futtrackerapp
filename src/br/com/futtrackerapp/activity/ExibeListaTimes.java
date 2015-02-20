@@ -136,7 +136,7 @@ public class ExibeListaTimes extends Activity implements OnItemClickListener {
 			}.execute();
 			Toast.makeText(
 					this,
-					"Vídeo solicitado com sucesso. Por favor, aguarde seu processamento.",
+					"VÃ­deo solicitado com sucesso. Por favor, aguarde seu processamento.",
 					Toast.LENGTH_LONG).show();
 			return true;
 		default:

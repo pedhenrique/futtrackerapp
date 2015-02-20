@@ -20,7 +20,7 @@ import br.com.futtrackerapp.webservice.VideoREST;
 
 public class ExibeVideo extends Activity {
 
-	// DeclaraÁ„o de variaveis necess·rias
+	// Declara√ß√£o de variaveis necess√°rias
 	private int id_video;
 	private MediaController vidControl;
 	private VideoView vidView;
@@ -30,16 +30,16 @@ public class ExibeVideo extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.exibe_video);
 
-		// DeclaraÁ„o de componentes da View
+		// Declara√ß√£o de componentes da View
 		vidView = (VideoView) findViewById(R.id.myVideo);
 
-		// InstanciaÁ„o de atributos necess·rios
-		id_video = getIntent().getIntExtra("id_video", 0); // Pega o id do VÌdeo que o usu·rio escolheu
-		vidControl = new MediaController(this); // Usado na reproduÁ„o do vÌdeo
+		// Instancia√ß√£o de atributos necess√°rios
+		id_video = getIntent().getIntExtra("id_video", 0); // Pega o id do Video que o usuario escolheu
+		vidControl = new MediaController(this); // Usado na reprodu√ß√£o do video
 
 		// Seta ActionBar
 		ActionBar actionBar = getActionBar();
-		actionBar.setTitle("VÌdeo");
+		actionBar.setTitle("V√≠deo");
 	}
 
 	@Override
@@ -126,7 +126,7 @@ public class ExibeVideo extends Activity {
 			}.execute();
 			Toast.makeText(
 					this,
-					"VÌdeo solicitado com sucesso. Por favor, aguarde seu processamento.",
+					"V√≠deo solicitado com sucesso. Por favor, aguarde seu processamento.",
 					Toast.LENGTH_LONG).show();
 			return true;
 		default:

@@ -22,7 +22,7 @@ public class TelaInicial extends ListActivity{
 	private ListView listView;
 	private ArrayAdapter<String> adaptador = null;
 	private static final String[] menu = new String[]{
-		"Lista de Times", "Vídeos","Sair"
+		"Lista de Times", "VÃ­deos","Sair"
 	};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +94,7 @@ public class TelaInicial extends ListActivity{
 			}.execute();
 			Toast.makeText(
 					this,
-					"Vídeo solicitado com sucesso. Por favor, aguarde seu processamento.",
+					"VÃ­deo solicitado com sucesso. Por favor, aguarde seu processamento.",
 					Toast.LENGTH_LONG).show();
 			return true;
 		default:
