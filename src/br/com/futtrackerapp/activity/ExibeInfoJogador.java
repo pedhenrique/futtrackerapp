@@ -36,7 +36,7 @@ public class ExibeInfoJogador extends FragmentActivity{
 		
 		Tab tab = actionBar
 				.newTab()
-				.setText("Informações")
+				.setText("InformaÃ§Ãµes")
 				.setTabListener(
 						new TabListener<ExibeInfoJogadorFragment>(this,
 								"info_jogador", ExibeInfoJogadorFragment.class));
@@ -44,7 +44,7 @@ public class ExibeInfoJogador extends FragmentActivity{
 
 		tab = actionBar
 				.newTab()
-				.setText("Estatísticas")
+				.setText("EstatÃ­sticas")
 				.setTabListener(
 						new TabListener<ExibeGraficoJogadorFragment>(this,
 								"grafico_jogador",
@@ -98,7 +98,7 @@ public class ExibeInfoJogador extends FragmentActivity{
 			}.execute();
 			Toast.makeText(
 					this,
-					"Vídeo solicitado com sucesso. Por favor, aguarde seu processamento.",
+					"VÃ­deo solicitado com sucesso. Por favor, aguarde seu processamento.",
 					Toast.LENGTH_LONG).show();
 			return true;
 		default:

@@ -36,7 +36,7 @@ public class ExibeListaVideos extends Activity implements OnItemClickListener {
 		// Seta ActionBar
 		actionBar = getActionBar();
 		actionBar.setTitle("Videos");
-		actionBar.setSubtitle("Lista de Vídeos");
+		actionBar.setSubtitle("Lista de VÃ­deos");
 		actionBar.setIcon(R.drawable.logo_minas_grande);
 		
 		//Seta componentes da View
@@ -134,7 +134,7 @@ public class ExibeListaVideos extends Activity implements OnItemClickListener {
 			}.execute();
 			Toast.makeText(
 					this,
-					"Vídeo solicitado com sucesso. Por favor, aguarde seu processamento.",
+					"VÃ­deo solicitado com sucesso. Por favor, aguarde seu processamento.",
 					Toast.LENGTH_LONG).show();
 			return true;
 		default:
